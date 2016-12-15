@@ -1,0 +1,1240 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+
+    <style>
+      pre {
+        background: none;
+        border: none;
+        border-top: 1px solid grey;
+      }
+      .past pre {
+        color: grey;
+      }
+      .active pre {
+        border: 1px dashed #cecece;
+      }
+      .future pre, .future span { display: none }
+
+    </style>
+  </head>
+  <body>
+
+  <div id="impress">
+
+    <div class="step" data-x="0" data-y="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 text-center">
+            <div>
+              <h1>Reacting to Rails</h1>
+              <h3>Rick Graham</h3>
+              <small>www.raddstudio.com</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="0" data-y="1000">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 text-center">
+            <div>
+              What is Full Stack?
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="2000" data-y="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 text-center">
+            <div>
+              Why Rails?
+              <img src="images/mvc_lifecycle_rails.jpg" width="500px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="2000" data-y="700">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 text-center">
+            <div>
+              Why React?
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Step 1 -->
+    <!-- Step 1 -->
+    <!-- Step 1 -->
+    <!-- Step 1 -->
+
+
+    <div class="step" data-x="10000" data-y="-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <h1>Lets get setup!</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-x="10000">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                ~% cd Projects
+                ~/Projects% cd react_rails
+
+                ~/Projects/react_rails[master*]%<strong> which ruby</strong>
+                /Users/raddrick/.rvm/rubies/ruby-2.1.5/bin/ruby
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="12000">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <a href="https://rubyinstaller.org/">https://rubyinstaller.org/</a>
+              <img src="images/1-1.png" width="800px"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="10000" data-y="120">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                ~/Projects/react_rails[master*]%<strong> rails</strong>
+                Rails is not currently installed on this system. To get the latest version, simply type:
+
+                    $ sudo gem install rails
+
+                You can then rerun your "rails" command.
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="10000" data-y="240">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                ~/Projects/react_rails[master*]%<strong> gem install rails</strong>
+                Fetching: i18n-0.7.0.gem (100%)
+                Successfully installed i18n-0.7.0
+                Fetching: thread_safe-0.3.5.gem (100%)
+                Successfully installed thread_safe-0.3.5
+                Fetching: tzinfo-1.2.2.gem (100%)
+                ...
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="10000" data-y="550">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                ~/Projects/react_rails[master*]%<strong> rails</strong>
+                Usage:
+                  rails new APP_PATH [options]
+
+                Options:
+                  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                                         # Default: /Users/raddrick/.rvm/rubies/ruby
+                  -m, [--template=TEMPLATE]                              # Path to some application template (can be
+                      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+                  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+                  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+                      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+                  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+                  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+                      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloade
+                  -d, [--database=DATABASE]                              # Preconfigure for selected database (optio
+                                                                         # Default: sqlite3
+                  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript libr
+                                                                         # Default: jquery
+                  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+                      [--dev], [--no-dev]                                # Setup the application with Gemfile pointi
+                      [--edge], [--no-edge]                              # Setup the application with Gemfile pointi
+                      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+                  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+                      [--rc=RC]                                          # Path to file containing extra configurati
+                      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration optio
+                ...
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-x="10000" data-y="1000">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                ...
+                Rails options:
+                  -h, [--help], [--no-help]        # Show this help message and quit
+                  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+                Description:
+                    The 'rails new' command creates a new Rails application with a default
+                    directory structure and configuration at the path you specify.
+
+                    You can specify extra command-line arguments to be used every time
+                    'rails new' runs in the .railsrc configuration file in your home directory.
+
+                    Note that the arguments specified in the .railsrc file don't affect the
+                    defaults values shown above in this help message.
+
+                Example:
+                    rails new ~/Code/Ruby/weblog
+
+                    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+                    See the README in the newly created application to get going.
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="10000" data-y="1450">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                ~/Projects/react_rails[master*]%<strong> rails new reactive_blog -T -d postgresql</strong>
+                      create
+                      create  README.rdoc
+                      create  Rakefile
+                      create  config.ru
+                      create  Gemfile
+                      create  app
+                      create  app/assets/javascripts/application.js
+                      create  app/assets/stylesheets/application.css
+                      create  app/controllers/application_controller.rb
+                      create  app/helpers/application_helper.rb
+                      create  app/views/layouts/application.html.erb
+                      create  app/assets/images
+                      create  app/mailers
+                      create  app/models
+                      create  app/controllers/concerns
+                      create  app/models/concerns
+                      create  bin
+                      create  config
+                      create  db
+                      create  lib
+                      create  log
+                      create  public
+                         run  bundle install
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="10000" data-y="1850">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]%<strong> rails server</strong>
+                => Booting WEBrick
+                => Rails 4.2.5.1 application starting in development on http://localhost:3000
+                => Run `rails server -h` for more startup options
+                => Ctrl-C to shutdown server
+                [2016-12-15 00:56:48] INFO  WEBrick 1.3.1
+                [2016-12-15 00:56:48] INFO  ruby 2.3.0 (2015-12-25) [x86_64-darwin14]
+                [2016-12-15 00:56:48] INFO  WEBrick::HTTPServer#start: pid=54569 port=3000
+                Ctrl-C
+                [2016-12-15 00:59:16] INFO  going to shutdown ...
+                [2016-12-15 00:59:16] INFO  WEBrick::HTTPServer#start done.
+                Exiting
+              </pre>
+              <span><i class="fa fa-warning"></i> Try it out! point your browser to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></span><br />
+              <span>Next we will, generate a scaffold for Posts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Step 2 -->
+    <!-- Step 2 -->
+    <!-- Step 2 -->
+    <!-- Step 2 -->
+
+    <div class="step" data-x="14000" data-y="-350">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <h1>Lets Generate Posts</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="14000" data-y="25">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]%<strong> rails g scaffold Post title body:text</strong>
+                Expected string default value for '--jbuilder'; got true (boolean)
+                      invoke  active_record
+                      <i>create    db/migrate/20161214180342_create_posts.rb</i>
+                      create    app/models/post.rb
+                      invoke    test_unit
+                      create      test/models/post_test.rb
+                      create      test/fixtures/posts.yml
+                      invoke  resource_route
+                       route    resources :posts
+                      invoke  scaffold_controller
+                      create    app/controllers/posts_controller.rb
+                      invoke    erb
+                      create      app/views/posts
+                      create      app/views/posts/index.html.erb
+                      create      app/views/posts/edit.html.erb
+                      create      app/views/posts/show.html.erb
+                      create      app/views/posts/new.html.erb
+                      create      app/views/posts/_form.html.erb
+                      invoke    test_unit
+                      create      test/controllers/posts_controller_test.rb
+                      invoke    helper
+                      create      app/helpers/posts_helper.rb
+                      invoke      test_unit
+                      invoke    jbuilder
+                      create      app/views/posts/index.json.jbuilder
+                      create      app/views/posts/show.json.jbuilder
+                      create      app/views/posts/_post.json.jbuilder
+                      invoke  assets
+                      invoke    coffee
+                      create      app/assets/javascripts/posts.coffee
+                      invoke    scss
+                      create      app/assets/stylesheets/posts.scss
+                      invoke  scss
+                      create    app/assets/stylesheets/scaffolds.scss
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="13000" data-y="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 text-center">
+            <div>
+              <pre>
+              <h1>Remember me?</h1>
+              <img src="images/mvc_lifecycle_rails.jpg" width="500px">
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-x="15000" data-y="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                <code>db/migrate/20161214180342_create_posts.rb</code>
+
+                <code>
+                  class CreatePosts < ActiveRecord::Migration
+                    def change
+                      create_table :posts do |t|
+                        t.string :title
+                        t.text :body
+
+                        t.timestamps null: false
+                      end
+                    end
+                  end
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="16000" data-y="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]%<strong> rails g</strong>
+
+                Expected string default value for '--jbuilder'; got true (boolean)
+                Usage: rails generate GENERATOR [args] [options]
+
+                General options:
+                  -h, [--help]     # Print generator's options and usage
+                  -p, [--pretend]  # Run but do not make any changes
+                  -f, [--force]    # Overwrite files that already exist
+                  -s, [--skip]     # Skip files that already exist
+                  -q, [--quiet]    # Suppress status output
+
+                Please choose a generator below.
+                Rails:
+                  <i>assets
+                  controller
+                  generator
+                  helper
+                  integration_test
+                  jbuilder
+                  job
+                  mailer
+                  migration
+                  model
+                  resource
+                  scaffold
+                  scaffold_controller
+                  task</i>
+
+                Coffee:
+                  <i>coffee:assets</i>
+
+                Js:
+                  <i>js:assets</i>
+
+                TestUnit:
+                  <i>test_unit:generator
+                  test_unit:job
+                  test_unit:plugin</i>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="14000" data-y="450">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]% <strong>rake db:migrate</strong>
+                == 20161214180342 CreatePosts: migrating ======================================
+                -- create_table(:posts)
+                   -> 0.0020s
+                == 20161214180342 CreatePosts: migrated (0.0021s) =============================
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="15000" data-y="725">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                  Projects/react_rails/reactive_blog[master*]% <strong>rake -h</strong>
+                  rake [-f rakefile] {options} targets...
+
+                  Options are ...
+                          --backtrace=[OUT]            Enable full backtrace.  OUT can be stderr (default) or stdout.
+                          --comments                   Show commented tasks only
+                          --job-stats [LEVEL]          Display job statistics. LEVEL=history displays a complete job list
+                          --rules                      Trace the rules resolution.
+                          --suppress-backtrace PATTERN Suppress backtrace lines matching regexp PATTERN. Ignored if --trace is on.
+                      -A, --all                        Show all tasks, even uncommented ones (in combination with -T or -D)
+                      -B, --build-all                  Build all prerequisites, including those which are up-to-date.
+                      -D, --describe [PATTERN]         Describe the tasks (matching optional PATTERN), then exit.
+                      -e, --execute CODE               Execute some Ruby code and exit.
+                      -E, --execute-continue CODE      Execute some Ruby code, then continue with normal task processing.
+                      -f, --rakefile [FILENAME]        Use FILENAME as the rakefile to search for.
+                      -G, --no-system, --nosystem      Use standard project Rakefile search paths, ignore system wide rakefiles.
+                      -g, --system                     Using system wide (global) rakefiles (usually '~/.rake/*.rake').
+                      -I, --libdir LIBDIR              Include LIBDIR in the search path for required modules.
+                      -j, --jobs [NUMBER]              Specifies the maximum number of tasks to execute in parallel. (default is number of CPU cores + 4)
+                      -m, --multitask                  Treat all tasks as multitasks.
+                      -n, --dry-run                    Do a dry run without executing actions.
+                      -N, --no-search, --nosearch      Do not search parent directories for the Rakefile.
+                      -P, --prereqs                    Display the tasks and dependencies, then exit.
+                      -p, --execute-print CODE         Execute some Ruby code, print the result, then exit.
+                      -q, --quiet                      Do not log messages to standard output.
+                      -r, --require MODULE             Require MODULE before executing rakefile.
+                      -R, --rakelibdir RAKELIBDIR,     Auto-import any .rake files in RAKELIBDIR. (default is 'rakelib')
+                          --rakelib
+                      -s, --silent                     Like --quiet, but also suppresses the 'in directory' announcement.
+                      -t, --trace=[OUT]                Turn on invoke/execute tracing, enable full backtrace. OUT can be stderr (default) or stdout.
+                      -T, --tasks [PATTERN]            Display the tasks (matching optional PATTERN) with descriptions, then exit. -AT combination displays all of tasks contained no description.
+                      -v, --verbose                    Log message to standard output.
+                      -V, --version                    Display the program version.
+                      -W, --where [PATTERN]            Describe the tasks (matching optional PATTERN), then exit.
+                      -X, --no-deprecation-warnings    Disable the deprecation warnings.
+                      -h, -H, --help                   Display this help message.
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="16000" data-y="770">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]% <strong>rake -T</strong>
+                rake about                              # List versions of all Rails frameworks and the environment
+                rake assets:clean[keep]                 # Remove old compiled assets
+                rake assets:clobber                     # Remove compiled assets
+                rake assets:environment                 # Load asset compile environment
+                rake assets:precompile                  # Compile all the assets named in config.assets.precompile
+                rake cache_digests:dependencies         # Lookup first-level dependencies for TEMPLATE (like message...
+                rake cache_digests:nested_dependencies  # Lookup nested dependencies for TEMPLATE (like messages/sho...
+                rake db:create                          # Creates the database from DATABASE_URL or config/database....
+                rake db:drop                            # Drops the database from DATABASE_URL or config/database.ym...
+                rake db:fixtures:load                   # Load fixtures into the current environment's database
+                rake db:migrate                         # Migrate the database (options: VERSION=x, VERBOSE=false, S...
+                rake db:migrate:status                  # Display status of migrations
+                rake db:rollback                        # Rolls the schema back to the previous version (specify ste...
+                rake db:schema:cache:clear              # Clear a db/schema_cache.dump file
+                rake db:schema:cache:dump               # Create a db/schema_cache.dump file
+                rake db:schema:dump                     # Create a db/schema.rb file that is portable against any DB...
+                rake db:schema:load                     # Load a schema.rb file into the database
+                rake db:seed                            # Load the seed data from db/seeds.rb
+                rake db:setup                           # Create the database, load the schema, and initialize with ...
+                rake db:structure:dump                  # Dump the database structure to db/structure.sql
+                rake db:structure:load                  # Recreate the databases from the structure.sql file
+                rake db:version                         # Retrieves the current schema version number
+                rake doc:app                            # Generate docs for the app -- also available doc:rails, doc...
+                rake log:clear                          # Truncates all *.log files in log/ to zero bytes (specify w...
+                rake middleware                         # Prints out your Rack middleware stack
+                rake notes                              # Enumerate all annotations (use notes:optimize, :fixme, :to...
+                rake notes:custom                       # Enumerate a custom annotation, specify with ANNOTATION=CUSTOM
+                rake rails:template                     # Applies the template supplied by LOCATION=(/path/to/templa...
+                rake rails:update                       # Update configs and some other initially generated files (o...
+                rake routes                             # Print out all defined routes in match order, with names
+                rake secret                             # Generate a cryptographically secure secret key (this is ty...
+                rake stats                              # Report code statistics (KLOCs, etc) from the application o...
+                rake test                               # Runs all tests in test folder
+                rake test:all                           # Run tests quickly by merging all types and not resetting db
+                rake test:all:db                        # Run tests quickly, but also reset db
+                rake test:db                            # Run tests quickly, but also reset db
+                rake time:zones:all                     # Displays all time zones, also available: time:zones:us, ti...
+                rake tmp:clear                          # Clear session, cache, and socket files from tmp/ (narrow w...
+                rake tmp:create                         # Creates tmp directories
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="14000" data-y="600">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]% <strong>rails s</strong>
+                => Booting WEBrick
+                => Rails 4.2.5.1 application starting in development on http://localhost:3000
+                => Run `rails server -h` for more startup options
+                => Ctrl-C to shutdown server
+                [2016-12-15 02:05:49] INFO  WEBrick 1.3.1
+                [2016-12-15 02:05:49] INFO  ruby 2.3.0 (2015-12-25) [x86_64-darwin14]
+                [2016-12-15 02:05:49] INFO  WEBrick::HTTPServer#start: pid=56079 port=3000
+              </pre>
+              <span><i class="fa fa-warning"></i> Try it out! point your browser to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></span>
+              <span>&gt; Next we will, install a gem. Twitter Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Step 3 -->
+    <!-- Step 3 -->
+    <!-- Step 3 -->
+    <!-- Step 3 -->
+
+    <div class="step" data-x="18000" data-y="150">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <h1>
+                We can do better...
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="500">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <pre><img src="images/2-1.png" width="100%"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="615">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <pre><img src="images/2-2.png" width="100%"></pre>
+            <span><i class="fa fa-warning"></i> Checkout <a href="http://www.rubygems.com" target="_blank">http://www.rubygems.com</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="700">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <pre><img src="images/2-3.png" width="100%"></pre>
+            <span><i class="fa fa-warning"></i> Checkout <a href="https://github.com/seyhunak/twitter-bootstrap-rails#installing-the-gem" target="_blank">github.com/seyhunak/twitter-bootstrap-rails</a> for installation instructions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="1320">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>Gemfile</pre>
+              <pre>
+                source 'https://rubygems.org'
+                <strong>
+              + gem "therubyracer"
+              + gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+              + gem "twitter-bootstrap-rails"
+                </strong>
+                # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+                gem 'rails', '4.2.5.1'
+                ...
+              </pre>
+              <pre>
+                Projects/react_rails/reactive_blog[step2]% <strong>bundle install</strong>
+                Resolving dependencies...
+                Using rake 12.0.0
+                Using i18n 0.7.0
+                Using json 1.8.3
+                Using minitest 5.10.1
+                ...
+              </pre>
+              <span>
+                <i class="fa fa-warning"></i> Checkout <a href="https://github.com/seyhunak/twitter-bootstrap-rails#generating-layouts-and-views" target="_blank">github.com/seyhunak/twitter-bootstrap-rails</a> for generating layouts and views</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Step 4 -->
+    <!-- Step 4 -->
+    <!-- Step 4 -->
+    <!-- Step 4 -->
+
+
+    <div class="step" data-x="18000" data-y="1750">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Usage:
+
+                <strong>rails g bootstrap:layout [LAYOUT_NAME]</strong>
+                Themed (generates Bootstrap compatible scaffold views.) - (Haml and Slim supported)
+
+                Usage:
+
+                <strong>rails g bootstrap:themed [RESOURCE_NAME]</strong>
+                Example:
+
+                <strong>rails g scaffold Post title:string description:text
+                rake db:migrate
+                rails g bootstrap:themed Posts</strong>
+                Notice the plural usage of the resource to generate bootstrap:themed.
+
+                After running bundle install, run the generator:
+
+                <strong>rails generate bootstrap:install static</strong>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="2200">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[step2*]% <strong>rails g bootstrap:layout application</strong>
+                Expected string default value for '--jbuilder'; got true (boolean)
+                    conflict  app/views/layouts/application.html.erb
+                Overwrite /Users/raddrick/Projects/react_rails/reactive_blog/app/views/layouts/application.html.erb? (enter "h" for help) [Ynaqdh] y
+                       force  app/views/layouts/application.html.erb
+
+                Projects/react_rails/reactive_blog[step2*]% <strong>rails g bootstrap:themed Posts</strong>
+                Expected string default value for '--jbuilder'; got true (boolean)
+                    conflict  app/views/posts/index.html.erb
+                Overwrite /Users/raddrick/Projects/react_rails/reactive_blog/app/views/posts/index.html.erb? (enter "h" for help) [Ynaqdh]
+                       force  app/views/posts/index.html.erb
+                    conflict  app/views/posts/new.html.erb
+                Overwrite /Users/raddrick/Projects/react_rails/reactive_blog/app/views/posts/new.html.erb? (enter "h" for help) [Ynaqdh]
+                       force  app/views/posts/new.html.erb
+                    conflict  app/views/posts/edit.html.erb
+                Overwrite /Users/raddrick/Projects/react_rails/reactive_blog/app/views/posts/edit.html.erb? (enter "h" for help) [Ynaqdh]
+                       force  app/views/posts/edit.html.erb
+                    conflict  app/views/posts/_form.html.erb
+                Overwrite /Users/raddrick/Projects/react_rails/reactive_blog/app/views/posts/_form.html.erb? (enter "h" for help) [Ynaqdh]
+                       force  app/views/posts/_form.html.erb
+                    conflict  app/views/posts/show.html.erb
+                Overwrite /Users/raddrick/Projects/react_rails/reactive_blog/app/views/posts/show.html.erb? (enter "h" for help) [Ynaqdh]
+                       force  app/views/posts/show.html.erb
+
+                Projects/react_rails/reactive_blog[step2*]% <strong>rails generate bootstrap:install static</strong>
+                Expected string default value for '--jbuilder'; got true (boolean)
+                      insert  app/assets/javascripts/application.js
+                      create  app/assets/javascripts/bootstrap.js.coffee
+                      create  app/assets/stylesheets/bootstrap_and_overrides.css
+                      create  config/locales/en.bootstrap.yml
+                        gsub  app/assets/stylesheets/application.css
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="2600">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]% <strong>rails s</strong>
+                => Booting WEBrick
+                => Rails 4.2.5.1 application starting in development on http://localhost:3000
+                => Run `rails server -h` for more startup options
+                => Ctrl-C to shutdown server
+                [2016-12-15 02:05:49] INFO  WEBrick 1.3.1
+                [2016-12-15 02:05:49] INFO  ruby 2.3.0 (2015-12-25) [x86_64-darwin14]
+                [2016-12-15 02:05:49] INFO  WEBrick::HTTPServer#start: pid=56079 port=3000
+              </pre>
+              <span><i class="fa fa-warning"></i> Try it out! point your browser to <a href="http://localhost:3000/posts">http://localhost:3000/posts</a></span>
+              <span>&gt; Next we will, create a comments api</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Step 5 -->
+    <!-- Step 5 -->
+    <!-- Step 5 -->
+    <!-- Step 5 -->
+
+
+
+    <div class="step" data-x="18000" data-y="3050">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[step4]% <strong>rails g resource Comment post:references body:text</strong>
+                Expected string default value for '--jbuilder'; got true (boolean)
+                      invoke  active_record
+                      create    db/migrate/20161215065524_create_comments.rb
+                      create    app/models/comment.rb
+                      invoke    test_unit
+                      create      test/models/comment_test.rb
+                      create      test/fixtures/comments.yml
+                Expected string default value for '--helper'; got true (boolean)
+                Expected string default value for '--assets'; got true (boolean)
+                      invoke  controller
+                      create    app/controllers/comments_controller.rb
+                      invoke    erb
+                      create      app/views/comments
+                      invoke    test_unit
+                      create      test/controllers/comments_controller_test.rb
+                      invoke    helper
+                      create      app/helpers/comments_helper.rb
+                      invoke      test_unit
+                      invoke    assets
+                      invoke      coffee
+                      create        app/assets/javascripts/comments.coffee
+                      invoke      scss
+                      create        app/assets/stylesheets/comments.scss
+                      invoke  resource_route
+                       route    resources :comments
+
+                Projects/react_rails/reactive_blog[step4*]% <strong>rake db:migrate</strong>
+
+                == 20161215065524 CreateComments: migrating ===================================
+                -- create_table(:comments)
+                   -> 0.0023s
+                == 20161215065524 CreateComments: migrated (0.0024s) ==========================
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="3600">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[step4*]% <strong>rake routes</strong>
+
+                      Prefix Verb   URI Pattern                  Controller#Action
+
+                    comments GET    <a href="localhost/comments">/comments(.:format)</a>          comments#index
+                             POST   /comments(.:format)          comments#create
+                 new_comment GET    <a href="localhost/comments/new">/comments/new(.:format)</a>      comments#new
+                edit_comment GET    <a href="localhost/comments/1/edit">/comments/:id/edit(.:format)</a> comments#edit
+                     comment GET    <a href="localhost/comments/1">/comments/:id(.:format)</a>      comments#show
+                             PATCH  /comments/:id(.:format)      comments#update
+                             PUT    /comments/:id(.:format)      comments#update
+                             DELETE /comments/:id(.:format)      comments#destroy
+                       posts GET    <a href="localhost/posts">/posts(.:format)</a>             posts#index
+                             POST   /posts(.:format)             posts#create
+                    new_post GET    <a href="localhost/posts/new">/posts/new(.:format)</a>         posts#new
+                   edit_post GET    <a href="localhost/posts/1/edit">/posts/:id/edit(.:format)</a>    posts#edit
+                        post GET    <a href="localhost/posts/1">/posts/:id(.:format)</a>         posts#show
+                             PATCH  /posts/:id(.:format)         posts#update
+                             PUT    /posts/:id(.:format)         posts#update
+                             DELETE /posts/:id(.:format)         posts#destroy
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="18000" data-y="3900">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Rails.application.routes.draw do
+                - resources :posts
+                - resources :comments
+
+                <strong>+ resources :posts do
+                +   resources :comments, :only => [:create]
+                + end</strong>
+                end
+              </pre>
+
+              <pre>
+                post_comments POST   /posts/:post_id/comments(.:format) comments#create
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="step" data-x="18000" data-y="4300">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                <h1>Reminder! We have written no code so far!
+no HTML, no Javascript, no Ruby.
+Just commands!</h1>
+                <h3>And we have a functional bare bones blog</h3>
+                <img src="images/ruby_rhod.gif" width="500px"/>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="step" data-x="-2000" data-y="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <h1>Lets add some code!</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-x="-2000" data-y="200">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>/app/controllers/posts_controller.rb</pre>
+              <pre class="ruby hljs">
+class PostsController < ApplicationController
+  before_filter :authenticate, :except => [ :index, :show ]
+
+  // … all your actions go in here
+
+  private
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "secret"
+    end
+  end
+end
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-x="-2000" data-y="450">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>/app/controllers/comments_controller.rb</pre>
+              <pre class="ruby hljs">
+class CommentsController < ApplicationController
+  def create
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create!(params[:comment])
+    redirect_to @post
+  end
+end
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-x="-2000" data-y="900">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>app/views/posts/show.html.erb</pre>
+              <pre class="html hljs">
+               &lt;p id="notice"&gt;&lt;%= notice %&gt;&lt;/p&gt;
+               &lt;%= render :partial =&gt; @post %&gt;
+               &lt;%= link_to 'Edit', edit_post_path(@post) %&gt; &gt;
+               &lt;%= link_to 'Back', posts_path %&gt;
+               &lt;h2&gt;Comments&lt;/h2&gt;
+               &lt;div id="comments"&gt;
+                  &lt;%= render :partial =&gt; @post.comments %&gt;
+               &lt;/div&gt;
+              </pre>
+              <pre>app/views/comments/_comment.html.erb</pre>
+              <pre class="html hljs">
+                &lt;%= div_for comment do %&gt;
+                  &lt;p&gt;
+                    &lt;strong&gt;
+                      Posted &lt;%= time_ago_in_words(comment.created_at) %&gt; ag&gt;
+                    &lt;/strong&gt;
+                    &lt;br/&gt;
+                    &lt;%= comment.body %&gt;
+                  &lt;/p&gt;
+                &lt;% end %&gt;
+              </pre>
+              <pre>app/views/posts/show.html.erb</pre>
+              <pre>
+                &lt;%= form_for [@post, Comment.new] do |f| %&gt;
+                  &lt;p&gt;
+                    &lt;%= f.label :body, "New comment" %&gt;&lt;br/&gt;
+                    &lt;%= f.text_area :body %&gt;
+                  &lt;/p&gt;
+                  &lt;p&gt;&lt;%= f.submit "Add comment" %&gt;&lt;/p&gt;
+                &lt;% end %&gt;
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="step" data-x="-2000" data-y="1400">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                Projects/react_rails/reactive_blog[master*]% <strong>rails s</strong>
+                => Booting WEBrick
+                => Rails 4.2.5.1 application starting in development on http://localhost:3000
+                => Run `rails server -h` for more startup options
+                => Ctrl-C to shutdown server
+                [2016-12-15 02:05:49] INFO  WEBrick 1.3.1
+                [2016-12-15 02:05:49] INFO  ruby 2.3.0 (2015-12-25) [x86_64-darwin14]
+                [2016-12-15 02:05:49] INFO  WEBrick::HTTPServer#start: pid=56079 port=3000
+              </pre>
+              <span><i class="fa fa-warning"></i> Try it out! point your browser to <a href="http://localhost:3000/posts/1">http://localhost:3000/posts/1</a></span>
+              <span>&gt; Next we will, install a gem. React.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Step 6 -->
+    <!-- Step 6 -->
+    <!-- Step 6 -->
+    <!-- Step 6 -->
+
+
+
+    <div class="step" data-x="-4000" data-y="-110">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <h1>
+                Lets add some React
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="-4000" data-y="150">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                <a href="https://github.com/reactjs/react-rails#installation" target="_blank">https://github.com/reactjs/react-rails#installation</a>
+                Usage:
+                Add react-rails to your gemfile:
+
+                      <strong>gem 'react-rails'</strong>
+
+                And install:
+
+                      <strong>bundle install</strong>
+
+                Next, run the installation script:
+
+                      <strong>rails g react:install</strong>
+
+                This will:
+
+                create a components.js manifest file and a app/assets/javascripts/components/ directory, where you will put your components
+                place the following in your application.js:
+
+                //= require react
+                //= require react_ujs
+                //= require components
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="step" data-x="-4000" data-y="650">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                ...
+                Installing react-rails 1.10.0
+                Using twitter-bootstrap-rails 3.2.2
+                Using rails 4.2.5.1
+                Using sass-rails 5.0.6
+                Using web-console 2.3.0
+                Bundle complete! 16 Gemfile dependencies, 68 gems now installed.
+                Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+                Projects/react_rails/reactive_blog[step6*]% <strong>rails g react:install</strong>
+                Expected string default value for '--jbuilder'; got true (boolean)
+                      create  app/assets/javascripts/components
+                      create  app/assets/javascripts/components/.gitkeep
+                      insert  app/assets/javascripts/application.js
+                      insert  app/assets/javascripts/application.js
+                      insert  app/assets/javascripts/application.js
+                      create  app/assets/javascripts/components.js
+              </pre>
+              <pre>
+              Projects/react_rails/reactive_blog[step6*]% rails g react:component Post title body:text
+
+              create  app/assets/javascripts/components/post.js.jsx
+              </pre>
+              <pre>
+              Projects/react_rails/reactive_blog[step6*]% rails g react:component Comment post:references body:text
+
+              create  app/assets/javascripts/components/comment.js.jsx
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-x="-4000" data-y="1250">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <div>
+              <pre>
+                A. Sharif
+                Understanding the React Component Lifecycle
+                21 Mar 2015
+
+                Introduction
+                React enables to create components by invoking the React.createClass() method which expects a render method and triggers a lifecycle that can be hooked into via a number of so called lifecycle methods.
+                http://busypeoples.github.io/post/react-component-lifecycle/
+
+                The Lifecycle
+                To get a clear idea of the lifecycle we will need to differentiate between the initial creation phase, where the component is created, and state and props changes triggered updates as well as the component unmoutings phase.
+                <img src="images/lifecycle_init.png" width="500px" />
+                State Changes
+                State changes will trigger a number of methods to hook into.
+                <img src="images/lifecycle_props.png" width="500px" />
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="step" data-scale="10">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 text-center">
+            <div>
+              <pre><h1>Thanks!</h1></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="js/impress.js"></script>
+  <script>
+    impress().init();
+  </script>
+
+  </body>
+</html>
